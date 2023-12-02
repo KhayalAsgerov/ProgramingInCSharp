@@ -16,6 +16,17 @@ namespace ProgramingExercise11
             test.TxtOrganizer();
             OrganazingMultimediaOnDesktop test1=new OrganazingMultimediaOnDesktop();
             test1.OrganizingMultimedia();
+            Console.WriteLine("Input number of lines to write in the file:");
+            int lineNumber = int.Parse(Console.ReadLine());
+            string[] lines = new string[lineNumber];
+            for (int i = 0; i < lineNumber; i++)
+            {
+                Console.WriteLine($"Input line {i + 1} :");
+                lines[i] = Console.ReadLine();
+            }
+            string filePath = @"C:\Users\User\Desktop";
+            var directory = new DirectoryInfo(filePath);
+            File.WriteAllLines(filePath, lines);
             Console.ReadKey();
         }
         public class OrganazingDocumentFilesOnDesktop
@@ -92,7 +103,7 @@ namespace ProgramingExercise11
                         Console.WriteLine("Multimedia directory is created");
                     }
                     else
-                    {
+                    { 
                         Console.WriteLine("This Directory is already exists");
                     }
                 }
